@@ -1,12 +1,9 @@
-import Image from "next/image";
-import { Inter } from "next/font/google";
-
-const inter = Inter({ subsets: ["latin"] });
+import Hero from "@/components/Hero";
 
 export default function Home() {
   return (
-    <div>
-      <h1>Next.js + Tailwind CSS</h1>
-    </div>
+    <>
+      <Hero />
+    </>
   );
 }

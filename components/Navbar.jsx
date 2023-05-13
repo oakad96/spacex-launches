@@ -17,7 +17,7 @@ export default () => {
               menuState ? "" : "hidden"
             }`}
           >
-            <ul className="mt-12 space-y-5 lg:flex lg:space-x-6 lg:space-y-0 lg:mt-0">
+            <ul className="space-y-5 lg:flex lg:space-x-6 lg:space-y-0 lg:mt-0">
               {navigation.map((item, idx) => (
                 <li key={idx} className="text-gray-600 hover:text-gray-900">
                   <Link href={item.path}>{item.title}</Link>
