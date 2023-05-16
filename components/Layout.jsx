@@ -6,7 +6,11 @@ export default function Layout({ children }) {
 
   return (
     <>
-      <Navbar fluid={true} rounded={true} className="px-16">
+      <Navbar
+        fluid={true}
+        rounded={true}
+        className="max-w-screen-xl mx-auto my-2 border-2"
+      >
         <span>SpaceX Launches</span>
         <Navbar.Toggle />
         <Navbar.Collapse>
@@ -22,7 +26,7 @@ export default function Layout({ children }) {
         </Navbar.Collapse>
       </Navbar>
       <main>{children}</main>
-      <Footer container={true} className="mt-16">
+      <Footer container={true} className="mx-auto max-w-screen-xl  mt-8">
         <Footer.Copyright href="#" by="Onur Akad" year={2023} />
         <Footer.LinkGroup>
           <Footer.Link href="/about">
