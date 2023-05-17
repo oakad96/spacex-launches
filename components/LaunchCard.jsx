@@ -2,8 +2,8 @@ import { React, useState, useEffect } from "react";
 import CrewMembers from "./CrewMembers";
 import SlideShow from "./SlideShow";
 
-const LaunchCard = () => {
-  const [latestLaunch, setLatestLaunch] = useState(null);
+const LaunchCard = ({ launch }) => {
+  const [latestLaunch, setLatestLaunch] = useState(launch);
   const [date, setDate] = useState(null);
   const [crewIds, setCrewIds] = useState([]);
 
