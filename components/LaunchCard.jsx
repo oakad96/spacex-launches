@@ -20,21 +20,38 @@ const LaunchCard = () => {
 
   return (
     <Card className="mx-auto max-w-screen-xl">
-      <img
-        className="max-w-sm mx-auto"
-        src={latestLaunch?.links?.patch?.large}
-        alt="Launch Patch Image"
-      />
-      <h2>Launch Name: {latestLaunch?.name}</h2>
-      <h1>Launch Flight Number: {latestLaunch?.flight_number}</h1>
-      <h3>Launch Date: {date?.toUTCString()}</h3>
-      <p>
-        {latestLaunch?.details
-          ? latestLaunch?.details
-          : "No details on this launch."}
-      </p>
-      <h4>Rocket Name: {latestLaunch?.rocket}</h4>
-      <CrewMembers crewIds={crewIds} />
+      <div className="flex flex-row justify-evenly  ">
+        <div className="flex flex-col gap-8">
+          <img
+            className=" max-w-xs"
+            src={latestLaunch?.links?.patch?.small}
+            alt="Launch Patch Image"
+          />
+          <div id="launch-info" className="flex flex-col gap-2">
+            <h2>
+              <span className="font-bold">Name: </span> {latestLaunch?.name}
+            </h2>
+            <h2>
+              <span className="font-bold">Flight Number: </span>
+              {latestLaunch?.flight_number}
+            </h2>
+            <h2>
+              <span className="font-bold">Date: </span> {date?.toUTCString()}
+            </h2>
+            <div id="details">
+              <h3 className="font-bold">Details:</h3>
+              <p>
+                {latestLaunch?.details
+                  ? latestLaunch?.details
+                  : "No details on this launch."}
+              </p>
+            </div>
+          </div>
+        </div>
+        <div className="flex flex-col justify-center gap-5">
+          <CrewMembers crewIds={crewIds} />
+        </div>
+      </div>
     </Card>
   );
 };
