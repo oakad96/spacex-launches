@@ -1,3 +1,4 @@
+import { Avatar } from "flowbite-react";
 import { React, useEffect, useState } from "react";
 
 const CrewMembers = (props) => {
@@ -21,10 +22,19 @@ const CrewMembers = (props) => {
 
   return (
     <div>
-      <h4>Crew Members:</h4>
-      <ul>
+      <h4 className="font-bold mb-4">Crew Members:</h4>
+      <ul className="flex flex-col gap-4">
         {crew.map((member) => (
-          <li key={member?.id}>{member?.name}</li>
+          <li key={member?.id}>
+            <div className="flex flex-row gap-4">
+              <img
+                src={member?.image}
+                alt={member?.name}
+                className=" w-12 rounded-lg"
+              />
+              <span className="my-auto">{member?.name}</span>
+            </div>
+          </li>
         ))}
       </ul>
     </div>
