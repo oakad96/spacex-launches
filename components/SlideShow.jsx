@@ -7,7 +7,7 @@ const SlideShow = ({ images }) => {
       <h2 className="font-bold">No images available.</h2>
     </div>
   ) : (
-    <div className="mt-16 w-5/6 aspect-video mx-auto">
+    <div className="my-16 w-11/12 aspect-video mx-auto">
       <Carousel indicators={false} slide={false}>
         {images?.map((image, index) => (
           <img src={image} key={index} alt="launch picture" />
