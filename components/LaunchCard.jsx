@@ -6,7 +6,6 @@ const LaunchCard = () => {
   const [latestLaunch, setLatestLaunch] = useState(null);
   const [date, setDate] = useState(null);
   const [crewIds, setCrewIds] = useState([]);
-  const [crew, setCrew] = useState([]);
 
   useEffect(() => {
     fetch("https://api.spacexdata.com/v4/launches/latest").then((res) =>
@@ -19,11 +18,11 @@ const LaunchCard = () => {
   }, []);
 
   return (
-    <Card className="mx-auto max-w-screen-xl">
-      <div className="flex flex-row justify-evenly  ">
-        <div className="flex flex-col gap-8">
+    <div className="mx-auto max-w-screen-xl rounded-sm shadow-lg px-2 py-8 lg:flex lg:justify-between lg:items-center lg:align-center">
+      <div className="flex flex-col gap-4 lg:gap-24 lg:justify-center lg:items-center lg:flex-row lg:mx-auto">
+        <div className="flex flex-col items-center lg:mb-0">
           <img
-            className=" max-w-xs"
+            className="max-w-xs"
             src={latestLaunch?.links?.patch?.small}
             alt="Launch Patch Image"
           />
@@ -48,11 +47,11 @@ const LaunchCard = () => {
             </div>
           </div>
         </div>
-        <div className="flex flex-col justify-center gap-5">
+        <div className="m-4 w-full">
           <CrewMembers crewIds={crewIds} />
         </div>
       </div>
-    </Card>
+    </div>
   );
 };
 
