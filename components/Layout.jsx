@@ -9,7 +9,7 @@ export default function Layout({ children }) {
       <Navbar
         fluid={true}
         rounded={true}
-        className="max-w-screen-xl mx-auto my-2 border-2"
+        className="max-w-screen-xl mx-auto my-0 lg:my-2 border-0 lg:border-b-2"
       >
         <span>SpaceX Launches</span>
         <Navbar.Toggle />

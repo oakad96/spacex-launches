@@ -22,7 +22,7 @@ const LaunchCard = () => {
   return (
     <div className="mx-auto max-w-screen-xl rounded-sm shadow-lg px-2 py-8 lg:flex lg:flex-col lg:justify-between lg:items-center lg:align-center">
       <div className="flex flex-col gap-4 lg:gap-24 lg:justify-center lg:items-center lg:flex-row lg:mx-auto">
-        <div className="flex flex-col items-center lg:mb-0">
+        <div className="p-4 flex flex-col items-center lg:mb-0">
           <img
             className="max-w-xs"
             src={latestLaunch?.links?.patch?.small}
@@ -49,7 +49,7 @@ const LaunchCard = () => {
             </div>
           </div>
         </div>
-        <div className="mb-8 lg:m-4 w-full">
+        <div className="p-4 mb-8 lg:m-4 w-full">
           <CrewMembers crewIds={crewIds} />
         </div>
       </div>
