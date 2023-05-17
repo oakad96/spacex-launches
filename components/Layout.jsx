@@ -1,7 +1,7 @@
 import { Footer, Navbar } from "flowbite-react";
 import { useRouter } from "next/router";
 
-export default function Layout({ children }) {
+const Layout = ({ children }) => {
   const router = useRouter();
 
   return (
@@ -50,4 +50,6 @@ export default function Layout({ children }) {
       </Footer>
     </>
   );
-}
+};
+
+export default Layout;
