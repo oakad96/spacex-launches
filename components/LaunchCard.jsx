@@ -1,6 +1,6 @@
 import { React, useState, useEffect } from "react";
-import { Card } from "flowbite-react";
 import CrewMembers from "./CrewMembers";
+import SlideShow from "./SlideShow";
 
 const LaunchCard = () => {
   const [latestLaunch, setLatestLaunch] = useState(null);
@@ -8,7 +8,9 @@ const LaunchCard = () => {
   const [crewIds, setCrewIds] = useState([]);
 
   useEffect(() => {
-    fetch("https://api.spacexdata.com/v4/launches/latest").then((res) =>
+    fetch(
+      "https://api.spacexdata.com/v4/launches/5eb87d42ffd86e000604b384"
+    ).then((res) =>
       res.json().then((data) => {
         setLatestLaunch(data);
         setDate(new Date(data.date_utc));
@@ -18,7 +20,7 @@ const LaunchCard = () => {
   }, []);
 
   return (
-    <div className="mx-auto max-w-screen-xl rounded-sm shadow-lg px-2 py-8 lg:flex lg:justify-between lg:items-center lg:align-center">
+    <div className="mx-auto max-w-screen-xl rounded-sm shadow-lg px-2 py-8 lg:flex lg:flex-col lg:justify-between lg:items-center lg:align-center">
       <div className="flex flex-col gap-4 lg:gap-24 lg:justify-center lg:items-center lg:flex-row lg:mx-auto">
         <div className="flex flex-col items-center lg:mb-0">
           <img
@@ -47,10 +49,11 @@ const LaunchCard = () => {
             </div>
           </div>
         </div>
-        <div className="m-4 w-full">
+        <div className="mb-8 lg:m-4 w-full">
           <CrewMembers crewIds={crewIds} />
         </div>
       </div>
+      <SlideShow images={latestLaunch?.links?.flickr?.original} />
     </div>
   );
 };
